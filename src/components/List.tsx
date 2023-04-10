@@ -3,9 +3,11 @@ import Counitries from "./Counitries";
 
 interface ListProps {
   countries?: string[] | any
+  setOneCountry: React.Dispatch<React.SetStateAction<string>>
+  setToggle: React.Dispatch<React.SetStateAction<boolean>>
 }
 
-const List: React.FC<ListProps> = ({countries}) => {
+const List: React.FC<ListProps> = ({countries, setOneCountry, setToggle}) => {
   return (
     <div>
       <div
@@ -24,7 +26,7 @@ const List: React.FC<ListProps> = ({countries}) => {
       "
       >
         {countries?.map((country: string[], index: number) => (
-          <Counitries key={index} country={country} />
+          <Counitries setToggle={setToggle} setOneCountry={setOneCountry} key={index} country={country} />
         ))}
       </div>
     </div>

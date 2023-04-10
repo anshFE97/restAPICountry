@@ -9,8 +9,8 @@ const CL: React.FC<CountriesDetailProps> = ({label, detail}) => {
     <div className="flex gap-2">
     <h3 className="font-semibold tracking-wide">{label}: </h3>
     <div className='flex gap-2'>
-        {detail?.map((det: { name: string }[] | any, index: number) => (
-            <span key={index}>{det?.name}</span>
+        {detail?.map((det: any, index: number) => (
+            <span key={index}>{det}</span>
         ))}
     </div>
   </div>
