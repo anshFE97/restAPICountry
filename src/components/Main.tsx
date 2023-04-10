@@ -10,23 +10,24 @@ interface MainProps {
   setInput: React.Dispatch<React.SetStateAction<string>>;
   setOneCountry: React.Dispatch<React.SetStateAction<string>>;
   setToggle: React.Dispatch<React.SetStateAction<boolean>>;
+  darkMode: boolean;
 }
 
-const Main: React.FC<MainProps> = ({countries, setRegion, input, setInput, setOneCountry, setToggle}) => {
+const Main: React.FC<MainProps> = ({countries, setRegion, input, setInput, setOneCountry, setToggle, darkMode}) => {
   return (
     <div>
       <div>
         <div className='flex md:justify-between md:items-center flex-col gap-4 md:flex-row'>
           <div>
-            <Search input={input} setInput={setInput}/>
+            <Search darkMode={darkMode} input={input} setInput={setInput}/>
           </div>
           <div>
-            <Filter setRegion={setRegion}/>
+            <Filter darkMode={darkMode} setRegion={setRegion}/>
           </div>
         </div>
 
         <div>
-          <List setToggle={setToggle} countries={countries} setOneCountry={setOneCountry} />
+          <List darkMode={darkMode} setToggle={setToggle} countries={countries} setOneCountry={setOneCountry} />
         </div>
       </div>
     </div>

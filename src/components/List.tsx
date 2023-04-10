@@ -5,9 +5,10 @@ interface ListProps {
   countries?: string[] | any
   setOneCountry: React.Dispatch<React.SetStateAction<string>>
   setToggle: React.Dispatch<React.SetStateAction<boolean>>
+  darkMode: boolean;
 }
 
-const List: React.FC<ListProps> = ({countries, setOneCountry, setToggle}) => {
+const List: React.FC<ListProps> = ({countries, setOneCountry, setToggle, darkMode}) => {
   return (
     <div>
       <div
@@ -26,7 +27,7 @@ const List: React.FC<ListProps> = ({countries, setOneCountry, setToggle}) => {
       "
       >
         {countries?.map((country: string[], index: number) => (
-          <Counitries setToggle={setToggle} setOneCountry={setOneCountry} key={index} country={country} />
+          <Counitries darkMode={darkMode} setToggle={setToggle} setOneCountry={setOneCountry} key={index} country={country} />
         ))}
       </div>
     </div>

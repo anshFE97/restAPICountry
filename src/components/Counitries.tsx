@@ -4,13 +4,14 @@ interface CountriesProps {
   country?: string[] | any;
   setOneCountry: React.Dispatch<React.SetStateAction<string>>;
   setToggle: React.Dispatch<React.SetStateAction<boolean>>
+  darkMode: boolean;
 }
 
-const Counitries: React.FC<CountriesProps> = ({ country, setOneCountry, setToggle }) => {
+const Counitries: React.FC<CountriesProps> = ({ country, setOneCountry, setToggle, darkMode }) => {
   return (
     <div 
         onClick={() => {setOneCountry(country.cca3), setToggle(true)}}
-    className="bg-[#2B3945] rounded-md cursor-pointer transform hover:scale-105 transition xs:w-[320px]">
+    className={`${darkMode ? 'bg-[#2B3945]' : 'bg-white'} rounded-md cursor-pointer transform hover:scale-105 transition xs:w-[320px]`}>
       <div className="h-[100%]">
         <div className="h-[50%]">
           <img

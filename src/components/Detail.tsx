@@ -5,9 +5,10 @@ import Borders from "./Borders";
 
 interface DetailProps {
     country?: string[] | any;
+    darkMode: boolean
 }
 
-const Detail: React.FC<DetailProps> = ({country}) => {
+const Detail: React.FC<DetailProps> = ({country, darkMode}) => {
   const detail = country[0]
 
 
@@ -36,7 +37,7 @@ const Detail: React.FC<DetailProps> = ({country}) => {
             <div className="flex gap-2 md:flex-row justify-center md:items-center flex-col">
             <div className="font-semibold m-2">Border Countries:</div>
             <div className="flex flex-wrap gap-2">
-              <Borders borders={detail?.borders} />
+              <Borders darkMode={darkMode} borders={detail?.borders} />
             </div>
           </div>
           )
